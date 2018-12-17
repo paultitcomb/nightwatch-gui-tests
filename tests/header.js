@@ -13,8 +13,7 @@ module.exports = {
 			.moveToElement('.header-mobile-menu-close', 0, 0)
 			.mouseButtonClick(0)
 			.assert.hidden('.ui-navigation-mob')
-			.pause(2000)
-			.end();
+			.pause(2000);
 	},
 
 	'When the menu is clicked, the sub menu is opened': function(browser) {
@@ -35,9 +34,11 @@ module.exports = {
 			.assert.hidden('.ui-nav-list-mob > li:nth-child(1) .ui-nav-flyout-group')
 			.assert.visible('.ui-nav-list-mob > li:nth-child(3) .ui-nav-flyout-group')
 			.pause(2000)
-			.click('.header-mobile-menu-close')
+			.moveToElement('.header-mobile-menu-close', 0, 0)
+			.mouseButtonClick(0)
 			.pause(2000)
-			.click('.header-mobile-menu-open')
+			.moveToElement('.header-mobile-menu-open', 0, 0)
+			.mouseButtonClick(0)
 			.waitForElementVisible('.ui-navigation-mob', 500)
 			.assert.hidden('.ui-nav-list-mob > li:nth-child(3) .ui-nav-flyout-group')
 			.pause(2000);
